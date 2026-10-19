@@ -78,7 +78,7 @@
       font-weight: 600;
     }
 
-    /* Couple Names on the Curtain Opening Screen */
+    /* Couple Names on Opening Screen */
     .curtain-names {
       font-family: 'Great Vibes', cursive;
       font-size: 3.6rem;
@@ -244,7 +244,7 @@
 
     /* Invitation Card */
     .invitation-card {
-      max-width: 840px;
+      max-width: 860px;
       width: 100%;
       background: var(--card-bg);
       backdrop-filter: blur(14px);
@@ -482,7 +482,7 @@
       letter-spacing: 0.5px;
     }
 
-    /* Event Details & Timings */
+    /* Event Schedule Grid */
     .event-details-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -517,25 +517,142 @@
       color: var(--text-dark);
     }
 
-    /* Venue Box */
+    /* Side-by-Side Location & Contact Layout */
+    .venue-contact-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 20px;
+      margin: 25px 0 20px;
+      text-align: left;
+    }
+
     .venue-box {
-      margin: 25px 0;
-      padding: 24px;
+      padding: 24px 22px;
       background: linear-gradient(145deg, #ffffff, var(--pastel-cream));
       border: 1.5px dashed var(--gold-soft);
       border-radius: 20px;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
+
     .venue-name {
       font-family: 'Cinzel', serif;
-      font-size: 1.55rem;
+      font-size: 1.45rem;
       font-weight: 800;
       color: var(--gold-dark);
       margin-bottom: 6px;
     }
+
     .venue-addr {
-      font-size: 1rem;
+      font-size: 0.98rem;
       color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .contact-box {
+      padding: 24px 22px;
+      background: #ffffff;
+      border: 1.5px solid rgba(197, 155, 39, 0.3);
+      border-radius: 20px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      color: var(--gold-dark);
+      font-weight: 700;
+      margin-bottom: 14px;
+      border-bottom: 1px dashed var(--gold-soft);
+      padding-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding: 8px 12px;
+      background: #faf6ef;
+      border-radius: 12px;
+      border: 1px solid rgba(197, 155, 39, 0.2);
+    }
+
+    .contact-info {
+      font-size: 0.92rem;
+      color: var(--text-dark);
+    }
+    .contact-info strong {
+      display: block;
+      color: var(--gold-dark);
+      font-family: 'Cinzel', serif;
+      font-size: 0.98rem;
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 8px;
+    }
+    .contact-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--gold-primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .contact-btn:hover {
+      transform: scale(1.1);
+      background: var(--gold-dark);
+    }
+    .contact-btn.whatsapp {
+      background: #25d366;
+    }
+
+    /* DriveSafe Detour Advisory Alert Banner */
+    .drivesafe-banner {
+      background: linear-gradient(135deg, #fff7e6, #fff1d6);
+      border: 1.5px solid #f5b041;
+      border-left: 6px solid #e67e22;
+      border-radius: 16px;
+      padding: 14px 20px;
+      margin: 15px 0 25px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-align: left;
+      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.12);
+    }
+    .drivesafe-icon {
+      font-size: 1.8rem;
+      color: #e67e22;
+      flex-shrink: 0;
+    }
+    .drivesafe-text {
+      font-size: 0.96rem;
+      color: #633c04;
+      line-height: 1.45;
+    }
+    .drivesafe-text strong {
+      font-family: 'Cinzel', serif;
+      color: #b95d00;
+      font-size: 1.05rem;
+      letter-spacing: 0.5px;
+      display: inline-block;
+      margin-bottom: 2px;
     }
 
     /* Action Buttons */
@@ -605,7 +722,10 @@
       pointer-events: none;
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 768px) {
+      .venue-contact-grid {
+        grid-template-columns: 1fr;
+      }
       .curtain-names { font-size: 2.8rem; }
       .couple-title { font-size: 3.4rem; }
       .invitation-head { font-size: 2.4rem; }
@@ -807,11 +927,66 @@
         </div>
       </div>
 
-      <!-- Venue Information -->
-      <div class="venue-box">
-        <i class="fa-solid fa-location-dot" style="font-size: 1.6rem; color: var(--gold-primary); margin-bottom: 8px;"></i>
-        <div class="venue-name">Pola Convention Hall</div>
-        <div class="venue-addr">Bathalapalli Road, Dharmavaram, Andhra Pradesh - 515671</div>
+      <!-- Side-by-Side Location & Contact Details -->
+      <h3 class="section-title">Venue &amp; Contacts</h3>
+      <div class="ornamental-flourish"><span>❦</span></div>
+      
+      <div class="venue-contact-grid">
+        <!-- Venue Card -->
+        <div class="venue-box">
+          <i class="fa-solid fa-location-dot" style="font-size: 1.8rem; color: var(--gold-primary); margin-bottom: 10px;"></i>
+          <div class="venue-name">Pola Convention Hall</div>
+          <div class="venue-addr">Bathalapalli Road, Dharmavaram, Andhra Pradesh - 515671</div>
+        </div>
+
+        <!-- Contact Details Card -->
+        <div class="contact-box">
+          <div class="contact-title">
+            <i class="fa-solid fa-address-book" style="color:var(--gold-primary);"></i>
+            <span>For Inquiries &amp; Help</span>
+          </div>
+
+          <!-- Sivananda -->
+          <div class="contact-item">
+            <div class="contact-info">
+              <strong>Sri. Sivananda</strong>
+              <span>+91 99891 12462</span>
+            </div>
+            <div class="contact-actions">
+              <a href="tel:9989112462" class="contact-btn" title="Call Sivananda">
+                <i class="fa-solid fa-phone"></i>
+              </a>
+              <a href="https://wa.me/919989112462" target="_blank" class="contact-btn whatsapp" title="WhatsApp Sivananda">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Rajesh -->
+          <div class="contact-item">
+            <div class="contact-info">
+              <strong>Rajesh Voleti</strong>
+              <span>+91 93908 88816</span>
+            </div>
+            <div class="contact-actions">
+              <a href="tel:9390888816" class="contact-btn" title="Call Rajesh">
+                <i class="fa-solid fa-phone"></i>
+              </a>
+              <a href="https://wa.me/919390888816" target="_blank" class="contact-btn whatsapp" title="WhatsApp Rajesh">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DriveSafe Detour Advisory Alert Banner -->
+      <div class="drivesafe-banner">
+        <i class="fa-solid fa-triangle-exclamation drivesafe-icon"></i>
+        <div class="drivesafe-text">
+          <strong>DriveSafe Advisory:</strong><br />
+          Please use the detour route to reach the Convention Hall due to railway/main gate closure.
+        </div>
       </div>
 
       <!-- Action Buttons -->
