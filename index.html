@@ -78,7 +78,6 @@
       font-weight: 600;
     }
 
-    /* Couple Names on Opening Screen */
     .curtain-names {
       font-family: 'Great Vibes', cursive;
       font-size: 3.6rem;
@@ -181,7 +180,6 @@
       filter: brightness(0.78) contrast(0.95);
     }
 
-    /* Soft Pastel Ambient Overlay */
     .bg-overlay {
       position: fixed;
       top: 0;
@@ -193,7 +191,7 @@
       pointer-events: none;
     }
 
-    /* Falling Blossom Canvas */
+    /* Falling Petals */
     #petals-canvas {
       position: fixed;
       top: 0;
@@ -204,7 +202,6 @@
       pointer-events: none;
     }
 
-    /* Main Container */
     .main-wrapper {
       position: relative;
       z-index: 2;
@@ -257,7 +254,6 @@
       position: relative;
     }
 
-    /* Ornamental Card Corners */
     .card-corner {
       position: absolute;
       width: 40px;
@@ -270,7 +266,6 @@
     .bottom-left { bottom: 14px; left: 14px; border-right: none; border-top: none; border-bottom-left-radius: 12px; }
     .bottom-right { bottom: 14px; right: 14px; border-left: none; border-top: none; border-bottom-right-radius: 12px; }
 
-    /* Headers */
     .invocation {
       font-family: 'Cinzel', serif;
       font-size: 1.05rem;
@@ -288,7 +283,6 @@
       filter: drop-shadow(0 2px 4px rgba(212, 122, 136, 0.2));
     }
 
-    /* Section Subheadings */
     .section-title {
       font-family: 'Cinzel', serif;
       font-size: 1.3rem;
@@ -300,7 +294,6 @@
       position: relative;
     }
 
-    /* Couple Names */
     .couple-title {
       font-family: 'Great Vibes', cursive;
       font-size: 4.8rem;
@@ -318,36 +311,147 @@
       margin: 6px 0;
     }
 
-    /* ENLARGED HERO PHOTO */
-    .hero-photo-wrapper {
-      display: flex;
-      justify-content: center;
-      margin: 25px auto 30px;
+    /* ======================================================== */
+    /* ENHANCED ATTRACTIVE PHOTO SHOWCASE WITH MANDALA & FLORA  */
+    /* ======================================================== */
+    .hero-photo-showcase {
+      position: relative;
+      display: inline-block;
+      margin: 30px auto 35px;
+      padding: 24px;
     }
-    .hero-photo-frame {
-      width: 320px;
-      height: 320px;
+
+    /* Ambient Outer Glow */
+    .photo-glow-aura {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 380px;
+      height: 380px;
       border-radius: 50%;
-      padding: 8px;
-      background: linear-gradient(135deg, var(--gold-soft), #fff, var(--gold-primary));
-      box-shadow: 0 15px 40px rgba(140, 107, 18, 0.25), 0 0 20px rgba(255, 255, 255, 0.85);
-      transition: transform 0.4s ease;
+      background: radial-gradient(circle, rgba(223, 190, 111, 0.32) 0%, rgba(212, 122, 136, 0.15) 55%, transparent 75%);
+      z-index: 0;
+      animation: auraBreathe 4s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    @keyframes auraBreathe {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+      50% { transform: translate(-50%, -50%) scale(1.08); opacity: 1; }
+    }
+
+    /* Rotating Ornamental Mandala Ring */
+    .mandala-border-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 375px;
+      height: 375px;
+      border-radius: 50%;
+      border: 1.5px dashed var(--gold-soft);
+      z-index: 1;
+      pointer-events: none;
+      animation: rotateRing 60s linear infinite;
+    }
+    .mandala-border-ring::after {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border-radius: 50%;
+      border: 1px dotted var(--gold-primary);
+    }
+
+    @keyframes rotateRing {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    /* Four Floral Vines at Frame Flanks */
+    .flank-ornament {
+      position: absolute;
+      font-size: 1.5rem;
+      color: var(--gold-primary);
+      z-index: 3;
+      filter: drop-shadow(0 2px 5px rgba(197, 155, 39, 0.3));
+    }
+    .flank-left {
+      top: 50%;
+      left: -12px;
+      transform: translateY(-50%);
+    }
+    .flank-right {
+      top: 50%;
+      right: -12px;
+      transform: translateY(-50%);
+    }
+    .flank-top {
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.6rem;
+    }
+    .flank-bottom {
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Central Photo Frame */
+    .hero-photo-frame {
+      position: relative;
+      z-index: 2;
+      width: 310px;
+      height: 310px;
+      border-radius: 50%;
+      padding: 9px;
+      background: linear-gradient(135deg, #dfbe6f, #ffffff, #c59b27, #f7e7a9);
+      box-shadow: 0 16px 42px rgba(140, 107, 18, 0.28), 0 0 25px rgba(255, 255, 255, 0.95);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
       cursor: pointer;
     }
     .hero-photo-frame:hover {
       transform: scale(1.04);
+      box-shadow: 0 22px 50px rgba(140, 107, 18, 0.38), 0 0 35px rgba(255, 215, 0, 0.6);
     }
+
     .hero-photo-inner {
       width: 100%;
       height: 100%;
       border-radius: 50%;
       overflow: hidden;
-      border: 3px solid #fff;
+      border: 3.5px solid #fff;
+      background: #faf6ef;
     }
     .hero-photo-inner img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
+    }
+
+    /* Elegant Photo Caption Ribbon */
+    .photo-caption-badge {
+      position: absolute;
+      bottom: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #fffcf5, #fff5ea);
+      border: 1.5px solid var(--gold-soft);
+      border-radius: 25px;
+      padding: 6px 20px;
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      color: var(--gold-dark);
+      font-weight: 700;
+      white-space: nowrap;
+      z-index: 4;
+      box-shadow: 0 6px 16px rgba(140, 107, 18, 0.18);
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     /* Countdown Timer */
@@ -733,7 +837,11 @@
       .family-grid { grid-template-columns: 1fr; }
       .timer-num { font-size: 1.6rem; }
       .timer-block { min-width: 65px; padding: 10px 12px; }
-      .hero-photo-frame { width: 240px; height: 240px; }
+      
+      .hero-photo-showcase { padding: 14px; }
+      .photo-glow-aura { width: 290px; height: 290px; }
+      .mandala-border-ring { width: 285px; height: 285px; }
+      .hero-photo-frame { width: 235px; height: 235px; }
     }
   </style>
 </head>
@@ -812,12 +920,34 @@
         <i class="fa-solid fa-heart" style="color:var(--pastel-rose); font-size:0.75rem;"></i>
       </div>
 
-      <!-- ENLARGED HERO PHOTO -->
-      <div class="hero-photo-wrapper">
+      <!-- ============================================== -->
+      <!-- BEAUTIFULLY DESIGNED HERO PHOTO WITH MANDALA   -->
+      <!-- ============================================== -->
+      <div class="hero-photo-showcase">
+        <!-- Ambient Golden & Rose Halo Glow -->
+        <div class="photo-glow-aura"></div>
+
+        <!-- Rotating Mandala & Starlight Ring -->
+        <div class="mandala-border-ring"></div>
+
+        <!-- Decorative Arch Motifs Around Frame -->
+        <div class="flank-ornament flank-top"><i class="fa-solid fa-crown"></i></div>
+        <div class="flank-ornament flank-left"><i class="fa-solid fa-spa"></i></div>
+        <div class="flank-ornament flank-right"><i class="fa-solid fa-spa"></i></div>
+        <div class="flank-ornament flank-bottom"><i class="fa-solid fa-feather-pointed"></i></div>
+
+        <!-- The Central Photo Frame -->
         <div class="hero-photo-frame" title="Udayeshwar & Vinitha">
           <div class="hero-photo-inner">
             <img src="couple-photo.jpg" alt="Udayeshwar and Vinitha" onerror="this.src='DSC09540.jpg'" />
           </div>
+        </div>
+
+        <!-- Delicate Botanical Caption Badge -->
+        <div class="photo-caption-badge">
+          <i class="fa-solid fa-heart" style="color:var(--pastel-rose); font-size:0.75rem;"></i>
+          <span>Together Forever</span>
+          <i class="fa-solid fa-heart" style="color:var(--pastel-rose); font-size:0.75rem;"></i>
         </div>
       </div>
 
@@ -1009,7 +1139,7 @@
     </div>
   </div>
 
-  <!-- YouTube Audio API Script (Shatamanam Bhavati Song: jjNdc_Cyzdg) -->
+  <!-- YouTube Audio API Script -->
   <script src="https://www.youtube.com/iframe_api"></script>
   <script>
     // 1. YouTube Audio Controller with Shatamanam Bhavati
