@@ -43,99 +43,6 @@
       position: relative;
     }
 
-    /* Interactive Royal Gate / Opening Overlay */
-    #opening-curtain {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 10000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle at center, #fffcf5 15%, #f4e8d8 75%, #e6d3bd 100%);
-      transition: opacity 1.1s cubic-bezier(0.65, 0, 0.35, 1), transform 1.2s ease-in-out;
-      cursor: pointer;
-      text-align: center;
-      padding: 20px;
-    }
-
-    #opening-curtain.opened {
-      opacity: 0;
-      transform: scale(1.1);
-      pointer-events: none;
-    }
-
-    .curtain-ornament {
-      font-family: 'Cinzel', serif;
-      font-size: 0.95rem;
-      letter-spacing: 3px;
-      color: var(--gold-dark);
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .curtain-names {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3.6rem;
-      color: var(--gold-dark);
-      margin-bottom: 25px;
-      line-height: 1.2;
-      text-shadow: 0 2px 10px rgba(140, 107, 18, 0.18);
-    }
-    .curtain-names span {
-      color: var(--pastel-rose);
-    }
-
-    .wax-seal {
-      width: 135px;
-      height: 135px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #dfbe6f, #c59b27, #936e0a);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 14px 35px rgba(140, 107, 18, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.6);
-      border: 3.5px solid #fff;
-      animation: sealPulse 2.4s infinite ease-in-out;
-      position: relative;
-    }
-
-    .wax-seal-img {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-      margin-bottom: 4px;
-    }
-
-    .wax-seal span {
-      font-family: 'Cinzel', serif;
-      font-size: 0.68rem;
-      letter-spacing: 1.5px;
-      font-weight: 700;
-      color: #3b000d;
-      text-transform: uppercase;
-    }
-
-    @keyframes sealPulse {
-      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(197, 155, 39, 0.55); }
-      70% { transform: scale(1.06); box-shadow: 0 0 0 22px rgba(197, 155, 39, 0); }
-      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(197, 155, 39, 0); }
-    }
-
-    .curtain-hint {
-      margin-top: 25px;
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.2rem;
-      color: var(--text-muted);
-    }
-
     /* Under-Text Flourish Design */
     .ornamental-flourish {
       display: flex;
@@ -158,7 +65,7 @@
       background: linear-gradient(to left, transparent, var(--gold-soft));
     }
 
-    /* Background Video */
+    /* Looping Muted Background Video */
     .video-background {
       position: fixed;
       top: 0;
@@ -193,7 +100,7 @@
       pointer-events: none;
     }
 
-    /* Falling Blossom Canvas */
+    /* Falling Petals */
     #petals-canvas {
       position: fixed;
       top: 0;
@@ -213,7 +120,7 @@
       padding: 40px 16px 90px;
     }
 
-    /* Music Controller */
+    /* Music Controller Floating Button */
     .music-control {
       position: fixed;
       bottom: 24px;
@@ -222,14 +129,21 @@
       background: linear-gradient(135deg, #ffffff, var(--pastel-cream), var(--gold-soft));
       border: 2px solid var(--gold-primary);
       border-radius: 50%;
-      width: 56px;
-      height: 56px;
+      width: 58px;
+      height: 58px;
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 6px 20px rgba(197, 155, 39, 0.35);
       cursor: pointer;
       transition: transform 0.3s ease;
+      animation: pulse 2.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(197, 155, 39, 0.6); }
+      70% { box-shadow: 0 0 0 16px rgba(197, 155, 39, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(197, 155, 39, 0); }
     }
 
     .music-control:hover {
@@ -296,7 +210,6 @@
       position: relative;
     }
 
-    /* Couple Names with In-Between Lock/Key Emblem */
     .couple-title {
       font-family: 'Great Vibes', cursive;
       font-size: 4.8rem;
@@ -307,28 +220,14 @@
     }
     .groom-name { color: #8a6508; }
     .bride-name { color: var(--pastel-rose); }
-
-    /* The Emblem in-between Couple Names */
-    .emblem-separator {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin: 12px auto;
-    }
-    .emblem-img {
-      width: 72px;
-      height: 72px;
-      object-fit: contain;
-      filter: drop-shadow(0 4px 10px rgba(197, 155, 39, 0.45));
-      animation: emblemFloat 3s infinite ease-in-out;
-    }
-    @keyframes emblemFloat {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-4px) scale(1.05); }
+    .couple-ampersand {
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      color: var(--gold-primary);
+      margin: 6px 0;
     }
 
-    /* Hero Photo Showcase with Mandala & Flora */
+    /* Enhanced Photo Showcase with Mandala & Flora */
     .hero-photo-showcase {
       position: relative;
       display: inline-block;
@@ -820,7 +719,6 @@
 
     @media (max-width: 768px) {
       .venue-contact-grid { grid-template-columns: 1fr; }
-      .curtain-names { font-size: 2.8rem; }
       .couple-title { font-size: 3.4rem; }
       .invitation-head { font-size: 2.4rem; }
       .invitation-card { padding: 35px 18px; }
@@ -831,28 +729,10 @@
       .photo-glow-aura { width: 290px; height: 290px; }
       .mandala-border-ring { width: 285px; height: 285px; }
       .hero-photo-frame { width: 235px; height: 235px; }
-      .emblem-img { width: 58px; height: 58px; }
     }
   </style>
 </head>
 <body>
-
-  <!-- Interactive Curtain Opening Ceremony -->
-  <div id="opening-curtain" onclick="openInvitation()">
-    <p class="curtain-ornament">॥ Sri Kaati Kotieswara Swamy Prasannam ॥</p>
-    
-    <div class="curtain-names">
-      Udayeshwar <span>&amp;</span> Vinitha
-    </div>
-
-    <div class="wax-seal">
-      <!-- Lock Emblem in Wax Seal -->
-      <img src="couple-emblem.png" class="wax-seal-img" alt="Royal Emblem" onerror="this.onerror=null; this.src='lock-symbol.png';" />
-      <span>Unlock</span>
-    </div>
-    
-    <p class="curtain-hint">Tap seal to open the royal invitation</p>
-  </div>
 
   <!-- Falling Blossom Canvas -->
   <canvas id="petals-canvas"></canvas>
@@ -866,15 +746,15 @@
   </div>
   <div class="bg-overlay"></div>
 
-  <!-- Floating Music Controller -->
-  <div class="music-control" id="musicBtn" title="Toggle Wedding Music">
+  <!-- Floating Music Controller Button -->
+  <div class="music-control" id="musicBtn" title="Toggle Shatamanam Bhavati Song">
     <i class="fa-solid fa-compact-disc fa-spin" id="musicIcon"></i>
   </div>
 
   <!-- Hidden YouTube Audio Player -->
   <div id="yt-audio-player"></div>
 
-  <!-- Main Content Card -->
+  <!-- Main Invitation Card -->
   <div class="main-wrapper">
     <div class="invitation-card">
       <div class="card-corner top-left"></div>
@@ -897,15 +777,10 @@
         Together with their families and with great joy & delight, cordially invite you to celebrate the Wedding Reception of
       </p>
 
-      <!-- Couple Names with In-Between Emblem Photo -->
+      <!-- Couple Names -->
       <div class="couple-title">
         <div class="groom-name">Udayeshwar</div>
-        
-        <!-- EMBLEM PHOTO ADDED IN BETWEEN -->
-        <div class="emblem-separator">
-          <img src="couple-emblem.png" alt="Royal Wedding Emblem" class="emblem-img" onerror="this.onerror=null; this.src='lock-symbol.png';" />
-        </div>
-
+        <div class="couple-ampersand">&amp;</div>
         <div class="bride-name">Vinitha</div>
       </div>
 
@@ -916,7 +791,7 @@
         <i class="fa-solid fa-heart" style="color:var(--pastel-rose); font-size:0.75rem;"></i>
       </div>
 
-      <!-- Hero Couple Photo with Mandala & Flora -->
+      <!-- Hero Couple Photo with Floral Mandala -->
       <div class="hero-photo-showcase">
         <div class="photo-glow-aura"></div>
         <div class="mandala-border-ring"></div>
@@ -1138,7 +1013,7 @@
         width: '0',
         videoId: SONG_VIDEO_ID,
         playerVars: {
-          autoplay: 0,
+          autoplay: 1,
           loop: 1,
           playlist: SONG_VIDEO_ID,
           controls: 0,
@@ -1146,6 +1021,10 @@
           modestbranding: 1
         },
         events: {
+          onReady: (event) => {
+            // Attempt autoplay
+            event.target.playVideo();
+          },
           onStateChange: (event) => {
             if (event.data === YT.PlayerState.PLAYING) {
               isPlaying = true;
@@ -1159,17 +1038,17 @@
       });
     }
 
-    function openInvitation() {
-      const curtain = document.getElementById('opening-curtain');
-      curtain.classList.add('opened');
-      if (player && typeof player.playVideo === 'function') {
+    // First user touch/click anywhere on page ensures music starts if blocked by browser policy
+    document.body.addEventListener('click', function autoPlayOnFirstTouch() {
+      if (player && !isPlaying && typeof player.playVideo === 'function') {
         player.playVideo();
         isPlaying = true;
       }
-      showerPetals();
-    }
+      document.body.removeEventListener('click', autoPlayOnFirstTouch);
+    }, { once: true });
 
-    musicBtn.addEventListener('click', () => {
+    musicBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       if (!player) return;
       if (isPlaying) {
         player.pauseVideo();
@@ -1207,7 +1086,7 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // Falling Petals Canvas
+    // Falling Flower Petals Canvas Engine
     const canvas = document.getElementById('petals-canvas');
     const ctx = canvas.getContext('2d');
 
