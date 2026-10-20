@@ -45,9 +45,7 @@
       position: relative;
     }
 
-    /* ========================================================
-       1. ROYAL ENVELOPE / INTERACTIVE "UV" LOGO INTRO OVERLAY
-       ======================================================== */
+    /* Royal Opening Curtain */
     #welcome-curtain {
       position: fixed;
       inset: 0;
@@ -131,7 +129,6 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      position: relative;
     }
 
     .uv-logo {
@@ -186,7 +183,6 @@
     .open-invitation-btn:hover {
       transform: translateY(-2px) scale(1.04);
       box-shadow: 0 10px 30px rgba(255, 215, 0, 0.7);
-      background: linear-gradient(135deg, #ffe28a, #dfbe6f, #c59b27);
     }
 
     /* Flourishes */
@@ -211,7 +207,7 @@
       background: linear-gradient(to left, transparent, var(--gold-soft));
     }
 
-    /* Looping Muted Background Video */
+    /* Video Background */
     .video-background {
       position: fixed;
       top: 0;
@@ -246,7 +242,6 @@
       pointer-events: none;
     }
 
-    /* Falling Petals & Fireworks Canvas */
     #petals-canvas {
       position: fixed;
       top: 0;
@@ -266,7 +261,6 @@
       padding: 40px 16px 90px;
     }
 
-    /* Music Controller Floating Button */
     .music-control {
       position: fixed;
       bottom: 24px;
@@ -292,16 +286,11 @@
       100% { box-shadow: 0 0 0 0 rgba(197, 155, 39, 0); }
     }
 
-    .music-control:hover {
-      transform: scale(1.1) rotate(15deg);
-    }
-
     .music-control i {
       font-size: 22px;
       color: var(--gold-dark);
     }
 
-    /* Invitation Card */
     .invitation-card {
       max-width: 890px;
       width: 100%;
@@ -373,9 +362,7 @@
       margin: 6px 0;
     }
 
-    /* ========================================================
-       2. REVOLUTIONIZED MANDALA & PHOTO SHOWCASE
-       ======================================================== */
+    /* Hero Photo & Mandala Animations */
     .hero-photo-showcase {
       position: relative;
       display: inline-block;
@@ -402,7 +389,6 @@
       50% { transform: translate(-50%, -50%) scale(1.08); opacity: 1; }
     }
 
-    /* Outer Mandala Layer */
     .mandala-border-ring {
       position: absolute;
       top: 50%;
@@ -425,7 +411,6 @@
       border: 1px dotted var(--gold-primary);
     }
 
-    /* Inner Mandala Layer (Counter-rotating) */
     .mandala-border-ring-inner {
       position: absolute;
       top: 50%;
@@ -518,7 +503,7 @@
       gap: 8px;
     }
 
-    /* Countdown Timer */
+    /* Timer */
     .timer-container {
       display: flex;
       justify-content: center;
@@ -551,7 +536,7 @@
       display: block;
     }
 
-    /* Journey Column Timeline */
+    /* Timeline */
     .journey-timeline {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -585,6 +570,60 @@
     .journey-date {
       font-size: 0.9rem;
       color: var(--text-muted);
+    }
+
+    /* ========================================================
+       NEW: PORTRAIT SHOWCASE ABOVE FAMILY DETAILS (IMG_7241.jpg)
+       ======================================================== */
+    .portrait-showcase {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 32px auto 25px;
+      max-width: 480px;
+      width: 100%;
+    }
+
+    .portrait-arch-frame {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      height: 480px;
+      padding: 10px;
+      background: linear-gradient(145deg, #fcedc5, #dfbe6f, #8c6b12, #ffffff);
+      border-radius: 200px 200px 24px 24px;
+      box-shadow: 0 16px 42px rgba(140, 107, 18, 0.28), 0 0 25px rgba(255, 255, 255, 0.7);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .portrait-arch-frame:hover {
+      transform: translateY(-4px);
+    }
+
+    .portrait-arch-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 190px 190px 18px 18px;
+      overflow: hidden;
+      border: 3.5px solid #ffffff;
+      background: #faf6ef;
+    }
+
+    .portrait-arch-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .portrait-quote {
+      margin-top: 14px;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--gold-dark);
+      font-size: 1.08rem;
     }
 
     /* Family Details Section */
@@ -791,25 +830,25 @@
     }
 
     /* ========================================================
-       3. ADJUSTED DRIVESAFE DETOUR ADVISORY BANNER
+       UPDATED: CONCISE DRIVESAFE ADVISORY (DETOUR ONLY)
        ======================================================== */
     .drivesafe-banner {
       background: linear-gradient(135deg, #fffbf2 0%, #fff4dc 100%);
       border: 1.5px solid #e5ab48;
       border-left: 6px solid #d96f14;
-      border-radius: 18px;
-      padding: 18px 24px;
+      border-radius: 16px;
+      padding: 16px 22px;
       margin: 20px 0 25px;
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 16px;
       text-align: left;
       box-shadow: 0 6px 20px rgba(217, 111, 20, 0.12);
     }
     .drivesafe-icon-wrap {
       background: rgba(217, 111, 20, 0.12);
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -817,33 +856,22 @@
       flex-shrink: 0;
     }
     .drivesafe-icon {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       color: #d96f14;
     }
     .drivesafe-text {
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       color: #55330a;
-      line-height: 1.55;
+      line-height: 1.45;
     }
     .drivesafe-title {
       font-family: 'Cinzel', serif;
       color: #b35606;
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       font-weight: 700;
       letter-spacing: 0.5px;
-      margin-bottom: 4px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .drivesafe-route-steps {
-      margin-top: 6px;
-      padding-left: 18px;
-      font-size: 0.9rem;
-      color: #6a4413;
-    }
-    .drivesafe-route-steps li {
-      margin-bottom: 3px;
+      margin-bottom: 2px;
+      display: inline-block;
     }
 
     /* Action Buttons */
@@ -925,6 +953,7 @@
       .mandala-border-ring { width: 295px; height: 295px; }
       .mandala-border-ring-inner { width: 270px; height: 270px; }
       .hero-photo-frame { width: 245px; height: 245px; }
+      .portrait-arch-frame { max-width: 300px; height: 390px; }
       .uv-logo { font-size: 2.8rem; }
       .monogram-seal { width: 140px; height: 140px; }
     }
@@ -932,9 +961,7 @@
 </head>
 <body>
 
-  <!-- ========================================================
-       INTERACTIVE OPENING SCREEN WITH "UV" MONOGRAM
-       ======================================================== -->
+  <!-- Royal "UV" Intro Screen -->
   <div id="welcome-curtain">
     <div class="curtain-ornament-bg"></div>
     <div class="monogram-container" onclick="openInvitation()">
@@ -955,10 +982,10 @@
     </div>
   </div>
 
-  <!-- Falling Blossom, Confetti & Sparkler Canvas -->
+  <!-- Falling Petal, Confetti & Sparkler Canvas -->
   <canvas id="petals-canvas"></canvas>
 
-  <!-- Video Background (Muted, Looping) -->
+  <!-- Looping Muted Background Video -->
   <div class="video-background">
     <video autoplay muted loop playsinline poster="DSC09288.jpg">
       <source src="couple-video.mp4" type="video/mp4" />
@@ -967,7 +994,7 @@
   </div>
   <div class="bg-overlay"></div>
 
-  <!-- Floating Music Controller Button -->
+  <!-- Music Controller Floating Button -->
   <div class="music-control" id="musicBtn" title="Toggle Shatamanam Bhavati Song">
     <i class="fa-solid fa-compact-disc fa-spin" id="musicIcon"></i>
   </div>
@@ -987,7 +1014,6 @@
       <p class="invocation">॥ Sri Kaati Kotieswara Swamy Prasannam ॥</p>
       <h1 class="invitation-head">Voleti Family's Reception Invitation</h1>
 
-      <!-- Under-Text Flourish Design -->
       <div class="ornamental-flourish">
         <i class="fa-solid fa-seedling"></i>
         <i class="fa-solid fa-om"></i>
@@ -995,7 +1021,7 @@
       </div>
 
       <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); font-family: 'Playfair Display', serif; font-style: italic;">
-        Together with their families and with great joy & delight, cordially invite you to celebrate the Wedding Reception of
+        Together with their families and with great joy &amp; delight, cordially invite you to celebrate the Wedding Reception of
       </p>
 
       <!-- Couple Names -->
@@ -1005,14 +1031,13 @@
         <div class="bride-name">Vinitha</div>
       </div>
 
-      <!-- Under-Text Flourish Design -->
       <div class="ornamental-flourish">
         <i class="fa-solid fa-heart" style="color:var(--pastel-rose); font-size:0.75rem;"></i>
         <span>❖</span>
         <i class="fa-solid fa-heart" style="color:var(--pastel-rose); font-size:0.75rem;"></i>
       </div>
 
-      <!-- Hero Couple Photo with Dual Rotating Mandala Rings -->
+      <!-- Hero Photo Showcase with Dual Rotating Mandala Rings -->
       <div class="hero-photo-showcase">
         <div class="photo-glow-aura"></div>
         <div class="mandala-border-ring"></div>
@@ -1023,9 +1048,8 @@
         <div class="flank-ornament flank-right"><i class="fa-solid fa-spa"></i></div>
         <div class="flank-ornament flank-bottom"><i class="fa-solid fa-feather-pointed"></i></div>
 
-        <div class="hero-photo-frame" title="Udayeshwar & Vinitha" onclick="showerPetals()">
+        <div class="hero-photo-frame" title="Udayeshwar & Vinitha" onclick="showerPetals(true)">
           <div class="hero-photo-inner">
-            <!-- Attached Photo: DSC09288.jpg -->
             <img src="DSC09288.jpg" alt="Udayeshwar & Vinitha" onerror="this.src='couple-photo.jpg'" />
           </div>
         </div>
@@ -1085,6 +1109,18 @@
         </div>
       </div>
 
+      <!-- ========================================================
+           ATTACHED PHOTO ABOVE FAMILY DETAILS (IMG_7241.jpg)
+           ======================================================== -->
+      <div class="portrait-showcase">
+        <div class="portrait-arch-frame" onclick="showerPetals(true)">
+          <div class="portrait-arch-inner">
+            <img src="IMG_7241.jpg" alt="Udayeshwar & Vinitha" onerror="this.src='DSC09288.jpg'" />
+          </div>
+        </div>
+        <p class="portrait-quote">"Two souls, one sacred journey of eternal love."</p>
+      </div>
+
       <!-- Family Details Section -->
       <h3 class="section-title">Family Details</h3>
       <div class="ornamental-flourish"><span>❦</span></div>
@@ -1096,7 +1132,7 @@
             <li><strong>Groom:</strong> Udayeshwar</li>
             <li><strong>Father:</strong> Sri. Voleti Sivananda</li>
             <li><strong>Mother:</strong> Smt. Voleti Supriya</li>
-            <li><strong>Brother:</strong> Rajeshwar Voleti</li>
+            <li><strong>Brother:</strong> Rajeshwar </li>
             <li style="margin-top:6px; font-size:0.88rem; color:var(--text-muted);"><i class="fa-solid fa-location-dot"></i> Udayraj Gifts, Sivanagar, Dharmavaram</li>
           </ul>
         </div>
@@ -1143,7 +1179,7 @@
         </div>
       </div>
 
-      <!-- Side-by-Side Location & Contact Details -->
+      <!-- Venue & Contacts -->
       <h3 class="section-title">Venue &amp; Contacts</h3>
       <div class="ornamental-flourish"><span>❦</span></div>
       
@@ -1195,21 +1231,14 @@
         </div>
       </div>
 
-      <!-- DriveSafe Detour Advisory Alert Banner -->
+      <!-- DriveSafe Detour Advisory Alert Banner (Simplified) -->
       <div class="drivesafe-banner">
         <div class="drivesafe-icon-wrap">
           <i class="fa-solid fa-route drivesafe-icon"></i>
         </div>
         <div class="drivesafe-text">
-          <div class="drivesafe-title">
-            <span>DriveSafe Travel Advisory</span>
-            <i class="fa-solid fa-triangle-exclamation" style="font-size:0.95rem; color:#e67e22;"></i>
-          </div>
-          Due to temporary railway gate / main town route closures, please follow the designated bypass detour:
-          <ul class="drivesafe-route-steps">
-            <li>Take the <strong>Bathalapalli Ring Road route</strong> to reach the convention hall seamlessly.</li>
-            <li>Look for directional <strong>UV Wedding Signage Boards</strong> placed along the approach roads.</li>
-          </ul>
+          <strong class="drivesafe-title">DriveSafe Advisory:</strong><br />
+          Please take the detour route to reach the Convention Hall.
         </div>
       </div>
 
@@ -1269,18 +1298,15 @@
       });
     }
 
-    // Interactive Intro Curtain Action
     function openInvitation() {
       const curtain = document.getElementById('welcome-curtain');
       curtain.classList.add('opened');
 
-      // Play music upon user interaction
       if (player && typeof player.playVideo === 'function') {
         player.playVideo();
         isPlaying = true;
       }
 
-      // Trigger celebratory shower
       showerPetals(true);
     }
 
@@ -1298,7 +1324,6 @@
       }
     });
 
-    // Countdown Timer (Nov 29, 2026 11:00 AM IST)
     const targetDate = new Date("November 29, 2026 11:00:00").getTime();
 
     function updateCountdown() {
@@ -1323,9 +1348,6 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    /* ========================================================
-       ENHANCED PETAL, SPARKLER & FIREWORK PARTICLES ENGINE
-       ======================================================== */
     const canvas = document.getElementById('petals-canvas');
     const ctx = canvas.getContext('2d');
 
@@ -1337,17 +1359,17 @@
     resizeCanvas();
 
     const petalPalettes = [
-      'rgba(240, 185, 195, 0.9)', // Rose pink
-      'rgba(255, 236, 179, 0.9)', // Jasmine cream
-      'rgba(255, 218, 185, 0.88)',// Soft peach
-      'rgba(255, 255, 255, 0.92)',// White petal
-      'rgba(223, 190, 111, 0.85)',// Gold leaf
-      'rgba(212, 122, 136, 0.85)' // Deep rose
+      'rgba(240, 185, 195, 0.9)',
+      'rgba(255, 236, 179, 0.9)',
+      'rgba(255, 218, 185, 0.88)',
+      'rgba(255, 255, 255, 0.92)',
+      'rgba(223, 190, 111, 0.85)',
+      'rgba(212, 122, 136, 0.85)'
     ];
 
     class Particle {
       constructor(type = 'petal', burst = false) {
-        this.type = type; // 'petal', 'sparkle', or 'confetti'
+        this.type = type;
         this.reset(burst);
       }
 
@@ -1403,7 +1425,6 @@
         ctx.rotate(this.rotation);
 
         if (this.type === 'sparkle') {
-          // Shimmering Golden Star / Diamond
           ctx.fillStyle = '#fff4bd';
           ctx.beginPath();
           ctx.moveTo(0, -this.size);
@@ -1413,7 +1434,6 @@
           ctx.closePath();
           ctx.fill();
         } else {
-          // Curving Organic Flower Petal
           ctx.fillStyle = this.color;
           ctx.beginPath();
           ctx.ellipse(0, 0, this.size, this.size / 2.1, 0, 0, Math.PI * 2);
